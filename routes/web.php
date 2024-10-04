@@ -15,7 +15,7 @@ Route::middleware([CheckIsNotLogged::class])->group(function() {
 // app routes - user logged
 //Middleware para controle de rotas que precisam de autenticação para acesso
 Route::middleware([CheckIsLogged::class])->group(function(){
-  Route::get('/', [MainController::class, 'index']);
-  Route::get('/newNote', [MainController::class, 'newNote']);
-  Route::get('/logout', [AuthController::class, 'logout']);
+  Route::get('/', [MainController::class, 'index'])->name('home');
+  Route::get('/newNote', [MainController::class, 'newNote'])->name('new');
+  Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

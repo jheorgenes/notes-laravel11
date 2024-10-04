@@ -78,16 +78,7 @@ class AuthController extends Controller
       ]
     ]);
 
-    echo 'LOGIN COM SUCESSO';
-
-    // teste database connection
-    // try {
-    //   // Chamando a classe DB (de Facades) para testar a conexão
-    //   DB::connection()->getPdo();
-    //   echo 'Connection is OK';
-    // } catch (\PDOException $e) {
-    //   echo "Connection failed: " . $e->getMessage();
-    // }
-
+    //redirect to home
+    return redirect()->to('/');
   }
 }
